@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{{ asset('img/bootstrap-stack.png') }}" alt="" width="72"
+                 height="72">
+            <h2>Min max form</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                {{ form_start(form) }}
+                <div class="mb-3">
+                    {{ form_row(form.currency) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(form.type) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(form.period) }}
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Get value</button>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

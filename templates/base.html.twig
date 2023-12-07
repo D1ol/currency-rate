@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MVP Rate exchange{% endblock %}</title>
+    {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<div class="page-top">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+        </nav>
+    </header>
+    {% for flash in app.session.flashBag.get('success') %}
+        <div class="alert alert-success">
+            {{ flash }}
+        </div>
+    {% endfor %}
+</div>
+
+{% block body %}{% endblock %}
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Example</p>
+</footer>
+</body>
+</html>

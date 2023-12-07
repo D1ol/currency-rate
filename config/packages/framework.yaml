@@ -16,6 +16,13 @@ framework:
     php_errors:
         log: true
 
+    http_client:
+        scoped_clients:
+            nbl.http.client:
+                base_uri: '%env(NBL_API_URL)%'
+                verify_peer: false
+                verify_host: false
+
 when@test:
     framework:
         test: true
