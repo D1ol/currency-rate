@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{{ asset('img/bootstrap-stack.png') }}" alt="" width="72"
+                 height="72">
+            <h2>Exchange form</h2>
+        </div>
+        {{ component('exchange_currency_component') }}
+
+    </div>
+
+{% endblock %}

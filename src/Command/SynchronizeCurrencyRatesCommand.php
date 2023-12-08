@@ -39,7 +39,7 @@ class SynchronizeCurrencyRatesCommand extends Command
 
         foreach ($currencies as $currency) {
             $request = $this->nblHttpClient->request('GET',
-                sprintf('exchangerates/rates/a/%s/%s/%s/?format=json',
+                sprintf('exchangerates/rates/c/%s/%s/%s/?format=json',
                     $currency->getSymbol(),
                     $startDate->format('Y-m-d'),
                     $dateEnd->format('Y-m-d')),
@@ -60,7 +60,7 @@ class SynchronizeCurrencyRatesCommand extends Command
             }
         }
 
-        $io->success('Working');
+        $io->success('Success');
 
         return Command::SUCCESS;
     }

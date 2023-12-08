@@ -37,6 +37,7 @@ class CurrencyExchangeRatesDTO
 
     /**
      * @param RateDTO[] $rates
+     *
      * @return $this
      */
     public function setRates(array $rates): CurrencyExchangeRatesDTO

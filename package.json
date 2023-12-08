@@ -2,8 +2,11 @@
     "devDependencies": {
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
-        "@symfony/webpack-encore": "^4.0.0",
-        "bootstrap": "^5.3.2",
+        "@hotwired/stimulus": "^3.0.0",
+        "@symfony/stimulus-bridge": "^3.2.0",
+        "@symfony/ux-live-component": "file:vendor/symfony/ux-live-component/assets",
+        "@symfony/webpack-encore": "^4.5.0",
+        "bootstrap": "^4.6",
         "core-js": "^3.23.0",
         "regenerator-runtime": "^0.13.9",
         "webpack": "^5.74.0",

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Help;
+namespace App\Entity\Period;
 
 interface PeriodInterface
 {

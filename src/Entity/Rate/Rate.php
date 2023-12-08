@@ -22,7 +22,10 @@ class Rate
     private ?\DateTimeImmutable $date = null;
 
     #[ORM\Column]
-    private ?float $mid = null;
+    private ?float $bid = null;
+
+    #[ORM\Column]
+    private ?float $ask = null;
 
     public function getId(): ?int
     {
@@ -53,14 +56,26 @@ class Rate
         return $this;
     }
 
-    public function getMid(): ?float
+    public function getBid(): ?float
     {
-        return $this->mid;
+        return $this->bid;
     }
 
-    public function setMid(float $mid): static
+    public function setBid(?float $bid): Rate
     {
-        $this->mid = $mid;
+        $this->bid = $bid;
+
+        return $this;
+    }
+
+    public function getAsk(): ?float
+    {
+        return $this->ask;
+    }
+
+    public function setAsk(?float $ask): Rate
+    {
+        $this->ask = $ask;
 
         return $this;
     }

@@ -7,7 +7,8 @@ namespace App\DTO;
 class RateDTO
 {
     private string $effectiveDate;
-    private float $mid;
+    private float $bid;
+    private float $ask;
 
     public function getEffectiveDate(): string
     {
@@ -29,14 +30,26 @@ class RateDTO
         return $this;
     }
 
-    public function getMid(): float
+    public function getBid(): float
     {
-        return $this->mid;
+        return $this->bid;
     }
 
-    public function setMid(float $mid): RateDTO
+    public function setBid(float $bid): RateDTO
     {
-        $this->mid = $mid;
+        $this->bid = $bid;
+
+        return $this;
+    }
+
+    public function getAsk(): float
+    {
+        return $this->ask;
+    }
+
+    public function setAsk(float $ask): RateDTO
+    {
+        $this->ask = $ask;
 
         return $this;
     }

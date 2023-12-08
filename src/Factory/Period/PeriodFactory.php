@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Factory;
+namespace App\Factory\Period;
 
+use App\Entity\Period\MonthPeriod;
+use App\Entity\Period\PeriodInterface;
+use App\Entity\Period\QuarterPeriod;
+use App\Entity\Period\WeekPeriod;
 use App\Enum\PeriodEnum;
-use App\Help\MonthPeriod;
-use App\Help\PeriodInterface;
-use App\Help\QuarterPeriod;
-use App\Help\WeekPeriod;
 
 class PeriodFactory
 {

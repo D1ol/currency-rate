@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Help;
+namespace App\Entity\Period;
 
 abstract class Period implements PeriodInterface
 {

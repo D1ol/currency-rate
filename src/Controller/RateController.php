@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Currency\Currency;
-use App\Factory\PeriodFactory;
+use App\Factory\Period\PeriodFactory;
 use App\Form\MinMaxRateForm;
 use App\Repository\Rate\RateRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +18,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('rates/', name: 'rate_')]
 class RateController extends AbstractController
 {
+    /**
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
     #[Route('min-max', name: 'min_max')]
     public function minMax(Request $request, RateRepository $rateRepository): Response
     {
@@ -46,5 +52,11 @@ class RateController extends AbstractController
         return $this->render('rate/min_max.html.twig', [
             'form' => $form,
         ]);
+    }
+
+    #[Route('exchange', name: 'exchange')]
+    public function exchange(): Response
+    {
+        return $this->render('rate/exchange_currency.html.twig');
     }
 }

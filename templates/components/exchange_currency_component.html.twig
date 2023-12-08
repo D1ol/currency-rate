@@ -1,0 +1,26 @@
+<div class="row" {{ attributes }}>
+    <div class="col-md-8 order-md-1">
+        {{ form_start(form, {attr: {
+            'data-action': 'live#action',
+            'data-action-name': 'prevent|exchange'
+        }}) }}
+        <div class="mb-3">
+            {{ form_row(form.amount) }}
+        </div>
+        <div class="mb-3">
+            {{ form_row(form.action) }}
+        </div>
+        <div class="mb-3">
+            {{ form_row(form.targetCurrency) }}
+        </div>
+        {% if form.rate is defined %}
+            <div class="mb-3">
+                {{ form_row(form.rate) }}
+            </div>
+        {% endif %}
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Get value</button>
+        {{ form_end(form) }}
+
+    </div>
+</div>

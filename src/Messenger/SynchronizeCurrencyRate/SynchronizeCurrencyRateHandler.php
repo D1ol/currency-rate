@@ -29,7 +29,8 @@ class SynchronizeCurrencyRateHandler
             $rate
                 ->setCurrency($currency)
                 ->setDate($message->getRateDTO()->getEffectiveDateTimeImmutable())
-                ->setMid($message->getRateDTO()->getMid());
+                ->setBid($message->getRateDTO()->getBid())
+                ->setAsk($message->getRateDTO()->getAsk());
 
             $this->rateRepository->save($rate, true);
         }

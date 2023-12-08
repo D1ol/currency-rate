@@ -3,9 +3,9 @@
 namespace App\Repository\Rate;
 
 use App\Entity\Currency\Currency;
+use App\Entity\Period\PeriodInterface;
 use App\Entity\Rate\Rate;
 use App\Enum\TypeEnum;
-use App\Help\PeriodInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -44,7 +44,7 @@ class RateRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('rate');
 
         $qb
-            ->select(sprintf('%s(rate.mid)', $typeEnum->value))
+            ->select(sprintf('%s(rate.bid)', $typeEnum->value))
             ->leftJoin('rate.currency', 'currency')
             ->andWhere($qb->expr()->eq('rate.currency', ':currencyId'))
             ->andWhere($qb->expr()->between('rate.date', ':dateStart', ':dateEnd'))
